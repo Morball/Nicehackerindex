@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KommanderM's repos</title>
+    <link rel="stylesheet" href="res/css/style.css">
+    <linK rel="icon" href="res/css/favicon.ico">
+</head>
+<body>
+<p style="right: 0px; position: absolute; bottom: 0px" id="ip"></p>
+<div style="margin-top:40px">
+    <center><h1 style="font-size: 45px">KommanderM's repositories</h1></center>
+    <center><p id="time"></p></center>
+</div>
+<div style="margin-top:40px">
+
+    <center><pre>|<marquee behaviour="scroll" direction="left"><a href="https://github.com/Morball">Github</a>  ☐  <a href="https://discord.gg/exnVbnfzxK">Discord</a>  ☐  <a href="https://www.youtube.com/channel/UCoGeSPNx-fhbRhfzX-IpB5A">Youtube</a>  ☐  <a href=""></a></marquee>|</pre></center>
+
+</div>
+<center><img src="res/css/back.jpg" width="1100" height="500"></center>
+<script>
+    updatetime();
+    function updatetime() {
+        let date=new Date();
+        let sec=date.getSeconds();
+        let mins=date.getMinutes();
+        let hr=date.getHours();
+        if(sec<10){sec="0"+sec;}
+        if(mins<10){mins="0"+mins;}
+        if(hr<10){hr="0"+hr;}
+        document.getElementById("time").innerHTML=hr+" : "+mins+" : "+sec;
+    }setInterval(updatetime, 1000)
+
+
+
+</script>
+<script>
+    fetch("https://api.ipify.org?format=json")
+    .then(result => result.json())
+    .then(data=>document.getElementById("ip").innerHTML=data.ip)
+</script>
+<a href="index.html" style="bottom:0px; position: absolute;">Coded with ♡ by KommanderM</a>
+</body>
+</html>
